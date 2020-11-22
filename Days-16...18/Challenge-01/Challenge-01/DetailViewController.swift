@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
         //title = selectedImage
         if let imageNumber = self.imageNumber,
         let imageTotal = self.imageTotal {
-            title = "\(imageNumber) - \(imageTotal)"
+            title = "Picture \(imageNumber) - \(imageTotal)"
         }
         
         navigationItem.largeTitleDisplayMode = .never
