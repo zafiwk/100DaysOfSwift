@@ -79,7 +79,7 @@ class ViewController: UIViewController {
     }
     
     // Day 22 of 100 Days Of Swift
-    // Project-03: Shared Button Images
+    // Project-03: Add a bar button item that shows their score when tapped
     @objc func shareTapped() {
         let puntaje = "El puntaje de Banderas es: \(self.score) "
             
