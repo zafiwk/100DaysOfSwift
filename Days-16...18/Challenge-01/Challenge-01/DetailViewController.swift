@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
         if let imageNumber = self.imageNumber,
         let imageTotal = self.imageTotal {
             title = "Picture \(imageNumber) - \(imageTotal)"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         }
         
         navigationItem.largeTitleDisplayMode = .never
@@ -39,6 +40,30 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnTap = false
     }
+    
+    
+    /* Day 22 of 100 Days Of Swift
+    Project-03: Shared Button Images
+    @objc func shareTapped() {
+        guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
+            print("No image found")
+            return
+        }
+        
+        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }*/
+    
+    @objc func shareTapped() {
+        let recomendarApp = "Recomiendo esta apliacion"
+        
+        let vc = UIActivityViewController(activityItems: [recomendarApp], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+        
+    }
+    
 
     /*
     // MARK: - Navigation
