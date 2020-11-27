@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
         btnFlag01.layer.borderWidth = 1
@@ -74,6 +76,16 @@ class ViewController: UIViewController {
             }))
             present(ac, animated: true, completion: nil)
         }
+    }
+    
+    // Day 22 of 100 Days Of Swift
+    // Project-03: Shared Button Images
+    @objc func shareTapped() {
+        let puntaje = "El puntaje de Banderas es: \(self.score) "
+            
+        let vc = UIActivityViewController(activityItems: [puntaje], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
     
 }
